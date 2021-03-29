@@ -1,0 +1,45 @@
+
+<br><br>
+<br>
+<div class="container">
+<div class="card">
+  <div class="card-header">
+    <h2>Sign up</h2>
+  </div>
+  <div class="card-body">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+<br>
+  <div class="field form-group row">
+    <%= f.label :email, class:"col-form-label col-md-3 " %><br />
+    <%= f.email_field :email, autocomplete: "email",class:"form-control col-md-8 " %>
+  </div>
+
+  <div class="field form-group row">
+    <%= f.label :password, class:"col-form-label col-md-3 " %>
+    
+    <%= f.password_field :password, autocomplete: "new-password" ,class:"form-control col-md-8"%>
+    <% if @minimum_password_length %>
+    <p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <em>(<%= @minimum_password_length %> characters minimum)</em></p>
+    <% end %><br />
+  </div>
+
+  <div class="field form-group row">
+    <%= f.label :password_confirmation, class:"col-form-label col-md-3 " %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"form-control col-md-8" %>
+  </div>
+<br>
+  <div class="actions">
+    <%= f.submit "Sign up", class:"btn btn-secondary" ,style:"margin-left:20px"%>
+  </div>
+<% end %>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary bg-light">
+<%= render "devise/shared/links" %></button>
+  </div>
+</div>
+
+
+</div>

@@ -1,0 +1,39 @@
+```sudo -i -u postgres psql
+create role hakase_dev with createdb login password 'hakasepass';
+```
+
+```
+\du 
+DROP USER [USERNAME];
+```
+
+
+
+
+rails new hakaseapp -d postgresql
+
+rails new . -d postgresql
+In config/database.yml
+
+On the development section, add the database configuration as below.
+
+  host: localhost
+  port: 5432
+  username: hakase_dev
+  password: hakasepass
+
+Go to the testing section and add the PostgreSQL database configuration as below.
+
+  host: localhost
+  port: 5432
+  username: hakase_dev
+  password: hakasepass
+
+
+
+
+
+
+
+rails db:setup
+rails db:migrate

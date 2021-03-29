@@ -1,0 +1,38 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FoundYou</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <body>
+    
+
+    <!--Main content-->
+    <%= render 'articles/header'%>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    
+    <% if notice%>
+    <%= render 'layouts/alert'%>
+    <%end%>
+      <%= yield %>
+    </main>
+    <!--footer-->
+    <br>
+    <br>
+    <br>
+    <br>
+<%= render 'articles/footer'%>
+
+  </body>
+</html>

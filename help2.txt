@@ -1,0 +1,6 @@
+// to create a home controller with index.html.erb file
+rails g controller home index
+
+
+//to create scaffold
+rails g scaffold applicants name:string email:string github_url:string linked_in:string cv_url:string description:string skill1:string skill2:string skill3:string project1:string project1_url:string project2:string project2_url:string project3:string project3_url:string experience1:string experience2:string experience3:string

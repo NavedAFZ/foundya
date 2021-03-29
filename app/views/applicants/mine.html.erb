@@ -1,0 +1,58 @@
+
+
+<br>
+<% @applicants.each do |applicant| %>
+<% if current_user==applicant.user%> 
+<div id="my-account" >
+<h1 id="my-account-header" class="text-center text-white bg-primary">My Profile</h1>
+ <div class="row" id="appli">
+
+<div class="col-12 col-md-11 bg-dark text-light" id="appli-left">
+<h1 class=""><strong>Name :     </strong><%= applicant.name.capitalize %>  </h1>
+<h1 class=""><strong>Email :   </strong><%= applicant.email %> </h1>
+<hr>
+
+<div class="card text-dark">
+  <div class="card-header">
+    <h1>ABOUT ME</h1>
+  </div>
+  <div class="card-body" style="font-style:italic" >
+  <h2><%= applicant.description.capitalize %><h2>
+  <br>
+     </div>
+</div> 
+<br><br>
+
+</div>
+<br>
+<div class="col-12 col-md-1" id="appli-right">
+
+ <%= link_to 'Show', applicant,class:"btn btn-primary"%> <br><br>
+ <% if user_signed_in?%>
+        <%= link_to 'Edit', edit_applicant_path(applicant) ,class:"btn btn-secondary"%><br><br>
+        <%= link_to 'Destroy', applicant, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %>
+        
+
+      <br><br>
+   <%end%>
+
+</div>
+<br>
+
+
+</div>
+<%end%>
+
+<%end%>
+<br>
+<br>
+
+<br>
+
+</div>
+</div>
+
+
+
+
+

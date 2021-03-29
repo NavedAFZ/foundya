@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-header">
+    <h1 style="text-align:center">Editing Applicant</h1>
+  </div>
+  <div class="card-body">
+    <%= render 'form', applicant: @applicant %>
+    <%=p @a1%>
+<br>
+<div id="form-edit-btn">
+<br>
+<%= link_to 'Show', @applicant, class:'btn btn-secondary' %>
+ 
+<%= link_to 'Back', applicants_path,class:'btn btn-secondary' %>
+
+<div>
+<br>
+
+  </div>
+</div>
+

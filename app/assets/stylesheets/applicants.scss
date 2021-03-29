@@ -1,0 +1,78 @@
+// Place all the styles related to the applicants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+#quote{
+    
+    text-align: center;
+}
+#quote-h1{
+    padding: 30px;
+    background-color: rgb(20, 16, 16);
+    color: white;
+}
+#appli{
+    
+    margin: 20px;
+    text-align: center;
+    width: 80%;
+    margin:auto;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    box-shadow: 12px 10px 11px 1px rgba(0,0,0,0.8);
+-webkit-box-shadow: 12px 10px 11px 1px rgba(0,0,0,0.8);
+-moz-box-shadow: 12px 10px 11px 1px rgba(0,0,0,0.8);
+
+}
+#appli-left{
+    padding: 20px;
+}
+#appli-right{
+    padding: 20px;
+    padding-top: 50px;
+   
+}
+#appli-discr{
+    font-size: 25px;
+}
+#appli-right .btn{
+    width: 100%;
+    text-align: center;
+}
+#appli-left p{
+    font-size: 10px;
+}
+#add-appli{
+    margin-left: 50%;
+    margin-bottom: 30px;
+}
+
+
+.card-body{
+    font-size: 20px;
+}
+.card-header{
+    font-size: 40px;
+}
+
+#form-submit .btn{
+margin-left:50% ;
+}
+#form-edit-btn{
+    margin-left: 50%;
+}
+
+#all-accounts{
+    
+}
+#my-account{
+    
+  
+}
+#my-account-header{
+    text-align: center;
+    padding: 50px;
+ }
+ #all-accounts-header{
+    text-align: center;
+    padding: 50px;
+ }

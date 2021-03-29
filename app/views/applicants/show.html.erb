@@ -1,0 +1,171 @@
+
+
+
+<div class="card text-center">
+  <div class="card-header bg-dark text-light">
+<h1>USER PROFILE</h1>    
+  </div>
+  
+  <div class="card-body bg-white">
+
+<br>
+  <br>
+
+<div class="container">
+<div class="headers" >
+<div class="card" >
+  <div class="card-header bg-dark text-light">
+    <strong>Featured</strong>
+  </div>
+  <div class="card-body ">
+  <ul class="list-group list-group-flush ">
+    <li class="list-group-item ">
+    <strong>Name:</strong>
+     <%= @applicant.name.capitalize %>
+    </li>
+    <li class="list-group-item">
+    <strong>Email:</strong>
+    <%= @applicant.email %>
+    </li>
+    <li class="list-group-item">
+    <strong>Github url:</strong>
+  <%= @applicant.github_url %>
+    </li>
+    <li class="list-group-item">
+      <strong>Linked in:</strong>
+      <%= @applicant.linked_in %>
+    </li>
+    <li class="list-group-item">
+      <strong>Cv url:</strong>
+      <%= @applicant.cv_url %>
+
+    </li>
+  </ul>
+  </div>
+</div>
+
+<br>
+<br>
+
+
+
+
+
+
+
+<div class="card">
+  <div class="card-header bg-dark text-light">
+    <strong>Description:</strong>
+  </div>
+  <div class="card-body">
+  
+  <%= @applicant.description.capitalize %>
+
+  </div>
+</div>
+
+
+
+
+
+</div>
+<br>
+<br>
+<div class="main-body">
+<div class="card" >
+  <div class="card-header bg-dark text-light">
+    <strong>Skills</strong>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= @applicant.skill1.capitalize %></li>
+    <li class="list-group-item"><%= @applicant.skill2.capitalize %></li>
+    <li class="list-group-item"><%= @applicant.skill3.capitalize %></li>
+  </ul>
+</div>
+<br>
+<br>
+
+
+
+
+
+
+
+<div class="card text-center">
+  <div class="card-header bg-dark text-light">
+  <strong>Projects</strong>
+  </div>
+  <div class="card-body">
+  <div class="card text-center">
+  <div class="card-header bg-secondary text-light">
+    Project-1
+  </div>
+  <div class="card-body">
+    <p class="card-text"> <%= @applicant.project1.capitalize %></p>
+   
+  </div>
+  <div class="card-footer text-muted">
+     <strong>Project-1 URL:</strong>
+  <%= @applicant.project1_url %>
+  </div>
+</div>
+<br>
+<hr>
+<div class="card text-center">
+  <div class="card-header bg-secondary text-light">
+    Project-2
+  </div>
+  <div class="card-body">
+    <p class="card-text"> <%= @applicant.project1.capitalize %></p>
+   
+  </div>
+  <div class="card-footer text-muted">
+     <strong>Project-2 URL:</strong>
+  <%= @applicant.project2_url %>
+  </div>
+</div>
+<br>
+<hr>
+<div class="card text-center">
+  <div class="card-header bg-secondary text-light">
+    Project-3
+  </div>
+  <div class="card-body">
+    <p class="card-text"> <%= @applicant.project3.capitalize %></p>
+   
+  </div>
+  <div class="card-footer text-muted">
+     <strong>Project-3 URL:</strong>
+  <%= @applicant.project1_url %>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+<br>
+<br>
+<div class="card" >
+  <div class="card-header bg-dark text-light">
+    Experience
+    </div>
+    
+<ul>
+<br>
+    <br>
+<li class="list-group-item"><%= @applicant.experience1.capitalize %></li>
+    <li class="list-group-item"><%= @applicant.experience2.capitalize %></li>
+    <li class="list-group-item"><%= @applicant.experience3.capitalize %></li>
+  </ul>
+</div>
+<p>
+ 
+</div>
+<div>
+  </div>
+</div>
+<%if current_user==@applicant.user%>
+<%= link_to 'Edit', edit_applicant_path(@applicant) , class:'btn btn-dark'%>
+<%end%> 
+<%= link_to 'Back', applicants_path, class:'btn btn-dark' %>

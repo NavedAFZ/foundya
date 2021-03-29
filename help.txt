@@ -1,0 +1,24 @@
+yarn add bootstrap jquery popper.js
+
+
+
+
+// in /config/webpack/environment.js file
+const webpack = require("webpack") 
+
+environment.plugins.append("Provide", new webpack.ProvidePlugin({
+  $: 'jquery',
+  jQuery: 'jquery',
+  Popper: ['popper.js', 'default']
+}))
+
+
+
+// in application.js
+
+import "bootstrap"
+
+
+// assets/stylesheet/application.scss
+@import "bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');

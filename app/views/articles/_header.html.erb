@@ -1,0 +1,61 @@
+<!--Navigation Bar-->
+<!----style="position:fixed; top:0px; left:0px; width:100%; z-index:1"--->
+    <nav class="navbar navbar-expand-lg  navbar-light bg-primary " id="main_nav" style="position:fixed; top:0px; left:0px; width:100%; z-index:1" >
+          <%= fa_stacked_icon "camera inverse", base: "circle"%>
+            <%= link_to "Foundya!", applicants_path, class:'navbar-brand nav-text', style:'font-size:50px;'%>
+              
+            
+        
+        
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item " id="about">
+        <%= link_to "About Us", articles_about_path, class:'nav-link nav-text' %>
+      </li>
+        <li class="nav-item " id="applicants-nav-index">
+        <%= link_to "Applicants", applicants_path, class:'nav-link nav-text' %>
+      </li>
+      <li class="nav-item " id="applicants-nav-new">
+        <%= link_to "Join", new_applicant_path, class:'nav-link nav-text' %>
+      </li>
+
+
+      <% if user_signed_in?%>
+
+          <li class="nav-item " id="applicants-nav-index">
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:'nav-link nav-text' %>
+              </li>
+
+          <li class="nav-item " id="applicants-nav-index">
+                <%= link_to "Edit profile", edit_user_registration_path, class:'nav-link nav-text' %>
+              </li>
+                 <li class="nav-item " id="applicants-nav-index">
+                 <%= link_to "My profile", mine_path, class:'nav-link nav-text' %>
+
+            </li>
+    
+      <%else%>
+        
+          <li class="nav-item " id="applicants-nav-index">
+                <%= link_to "Sign Up",new_user_registration_path, class:'nav-link nav-text' %>
+              </li>
+          <li class="nav-item " id="applicants-nav-index">
+                <%= link_to "Sign In", new_user_session_path, class:'nav-link nav-text' %>
+              </li>
+           
+
+      <%end%>
+
+
+
+      
+    </ul>
+    <form class="form-inline my-2 my-lg-0" action="/search">
+      <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>    </nav>

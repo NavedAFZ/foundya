@@ -1,0 +1,157 @@
+<div class="container">
+<%= form_with(model: applicant) do |form| %>
+  <% if applicant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(applicant.errors.count, "error") %> prohibited this applicant from being saved:</h2>
+
+      <ul>
+        <% applicant.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<br>
+<br>
+  <div class="field form-group">
+    <% form.label :name %>
+    <%= form.text_field :name, class:'form-control', placeholder:"Name" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :email %>
+    <%= form.text_field :email, class:'form-control', placeholder:"Email (Eg:abc@gmail.com)" %>
+  </div>
+
+  <div class="field form-group">
+    <%form.label :github_url %>
+    <%= form.text_field :github_url, class:'form-control', placeholder:"Github URL" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :linked_in %>
+    <%= form.text_field :linked_in, class:'form-control', placeholder:"LinkedIn Id" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :cv_url %>
+    <%= form.text_field :cv_url, class:'form-control', placeholder:"CV URL(Google drive, github etc.)" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :description %>
+    <%= form.text_area :description, class:'form-control', placeholder:"describe yourself in not more than 2-3 lines" %>
+  </div>
+
+
+<div class="card">
+  <h5 class="card-header">Skills(Top 3)</h5>
+  <div class="card-body">
+      <div class="field form-group">
+    <% form.label :skill1 %>
+    <%= form.text_field :skill1, class:'form-control',placeholder:"(Eg: Frontend etc..)" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :skill2 %>
+    <%= form.text_field :skill2, class:'form-control',placeholder:"(Eg: Python etc..)" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :skill3 %>
+    <%= form.text_field :skill3, class:'form-control',placeholder:"(Eg: UX Design etc..)" %>
+  </div>
+
+
+  </div>
+</div>
+<br>
+<br>
+
+<div class="card">
+  <div class="card-header">
+    Projects(Top 3)
+  </div>
+  <div class="card-body">
+    <div class="field form-group">
+    <% form.label :project1 %>
+    <%= form.text_field :project1, class:'form-control', placeholder:"Project-Name" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :project1_url %>
+    <%= form.text_field :project1_url, class:'form-control',placeholder:"Project-link (Github, Gitlab etc..)" %>
+  </div>
+  
+  <br>
+<hr>
+<br>
+
+  <div class="field form-group">
+    <% form.label :project2 %>
+    <%= form.text_field :project2, class:'form-control', placeholder:"Project-Name" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :project2_url %>
+    <%= form.text_field :project2_url, class:'form-control',placeholder:"Project-link (Github, Gitlab etc..)" %>
+  </div>
+
+ <br>
+<hr>
+<br>
+
+
+  <div class="field form-group">
+    <% form.label :project3 %>
+    <%= form.text_field :project3, class:'form-control', placeholder:"Project-Name" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :project3_url %>
+    <%= form.text_field :project3_url, class:'form-control',placeholder:"Project-link (Github, Gitlab etc..)" %>
+  </div>
+
+  </div>
+</div>
+<br>
+<br>
+
+  
+  
+
+<div class="card">
+  <div class="card-header">
+    Experience
+  </div>
+  <div class="card-body">
+  <div class="field form-group">
+    <% form.label :experience1 %>
+    <%= form.text_field :experience1, class:'form-control' ,placeholder:"NA for freshers (Eg: Comapny-name : Position)"%>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :experience2 %>
+    <%= form.text_field :experience2, class:'form-control',placeholder:"NA for freshers (Eg: Comapny-name : Position)" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :experience3 %>
+    <%= form.text_field :experience3, class:'form-control' ,placeholder:"NA for freshers (Eg: Comapny-name : Position)"%>
+  </div>
+  
+  <div class="field form-group">
+    <%= form.number_field :user_id, id: :applicant_user_id, value: current_user.id,type: :hidden, class:'form-control'%>
+    
+  </div>
+  </div>
+
+</div>
+<br>
+
+ <div class="actions" style="margin-left:50%">
+    <%= form.submit class:'btn btn-secondary' %>
+  </div>
+  
+<% end %>
+</div>
