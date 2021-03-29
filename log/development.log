@@ -37414,3 +37414,18 @@ Processing by RailsAdmin::MainController#index as HTML
 Completed 200 OK in 93ms (Views: 79.8ms | ActiveRecord: 3.4ms | Allocations: 62877)
 
 
+Started GET "/" for 127.0.0.1 at 2021-03-29 23:27:08 +0530
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (1.7ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants"[0m
+  ↳ app/views/applicants/index.html.erb:14
+  Rendered applicants/index.html.erb within layouts/application (Duration: 41.2ms | Allocations: 12616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered articles/_header.html.erb (Duration: 5.3ms | Allocations: 919)
+  Rendered articles/_footer.html.erb (Duration: 0.4ms | Allocations: 179)
+  Rendered layout layouts/application.html.erb (Duration: 253.5ms | Allocations: 75305)
+Completed 200 OK in 269ms (Views: 244.3ms | ActiveRecord: 13.3ms | Allocations: 80285)
+
+
