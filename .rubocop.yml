@@ -1,0 +1,31 @@
+require: rubocop-rails
+
+
+AllCops:
+  Exclude:
+   - ./Gemfile
+   - Gemfile.lock
+   - ./test/test_helper.rb
+   - ./test/controllers/applicants_controller_test.rb
+   - ./test/channels/application_cable/connection_test.rb
+   - ./node_modules/node-sass/src/libsass/extconf.rb
+   - ./db/schema.rb
+   - ./db/migrate/*.rb
+   - ./node_modules/node-sass/src/libsass/contrib/libsass.spec
+   - ./config/puma.rb
+   - ./config/initializers/devise.rb
+   - ./node_modules/**/*'
+   - ./config/**/*.rb
+   - ./bin/*
+   - ./app/views/applicants/_applicant.json.jbuilder
+   - ./app/models/*.rb
+   - ./app/helpers/*.rb
+   - ./app/controllers/*.rb
+   
+
+
+Style/FrozenStringLiteralComment:
+ Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false

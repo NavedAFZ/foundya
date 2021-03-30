@@ -1,10 +1,9 @@
-require "nested_form/engine"
-require "nested_form/builder_mixin"
+require 'nested_form/engine'
+require 'nested_form/builder_mixin'
 RailsAdmin.config do |config|
-
   ### Popular gems integration
   config.authorize_with do
-    redirect_to main_app.root_path unless warden.user.admin==true
+    redirect_to main_app.root_path unless warden.user.admin == true
   end
   ## == Devise ==
   # config.authenticate_with do

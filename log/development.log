@@ -44647,3 +44647,244 @@ Processing by Devise::RegistrationsController#create as HTML
 Completed 200 OK in 46ms (Views: 24.7ms | ActiveRecord: 4.6ms | Allocations: 18396)
 
 
+Started GET "/" for 127.0.0.1 at 2021-03-30 20:36:03 +0530
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (2.5ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants"[0m
+  ↳ app/views/applicants/index.html.erb:10
+  Rendered applicants/index.html.erb within layouts/application (Duration: 72.1ms | Allocations: 12793)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered articles/_header.html.erb (Duration: 6.8ms | Allocations: 955)
+  Rendered articles/_footer.html.erb (Duration: 0.9ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 293.5ms | Allocations: 75127)
+Completed 200 OK in 317ms (Views: 282.0ms | ActiveRecord: 16.2ms | Allocations: 80015)
+
+
+Started GET "/applicants/new" for 127.0.0.1 at 2021-03-30 20:36:07 +0530
+Processing by ApplicantsController#new as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 990)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-03-30 20:36:07 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 626)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 14.3ms | Allocations: 3077)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered articles/_header.html.erb (Duration: 0.8ms | Allocations: 388)
+  Rendered articles/_footer.html.erb (Duration: 0.6ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 12055)
+Completed 200 OK in 57ms (Views: 36.4ms | ActiveRecord: 8.1ms | Allocations: 19053)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-03-30 20:36:10 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"naved2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "naved2@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/applicants/new
+Completed 302 Found in 243ms (ActiveRecord: 4.7ms | Allocations: 6125)
+
+
+Started GET "/applicants/new" for 127.0.0.1 at 2021-03-30 20:36:10 +0530
+Processing by ApplicantsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "applicants" WHERE "applicants"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/applicants_controller.rb:74:in `check'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "applicants" WHERE "applicants"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/applicants_controller.rb:75:in `check'
+Redirected to http://127.0.0.1:3000/applicants
+Filter chain halted as :check rendered or redirected
+Completed 302 Found in 23ms (ActiveRecord: 5.3ms | Allocations: 5301)
+
+
+Started GET "/applicants" for 127.0.0.1 at 2021-03-30 20:36:10 +0530
+Processing by ApplicantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (1.2ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants"[0m
+  ↳ app/views/applicants/index.html.erb:10
+  Rendered applicants/index.html.erb within layouts/application (Duration: 27.0ms | Allocations: 1392)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_header.html.erb:24
+  Rendered articles/_header.html.erb (Duration: 3.7ms | Allocations: 1303)
+  Rendered layouts/_alert.html.erb (Duration: 0.7ms | Allocations: 138)
+  Rendered articles/_footer.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 85.2ms | Allocations: 11623)
+Completed 200 OK in 95ms (Views: 92.0ms | ActiveRecord: 2.5ms | Allocations: 12126)
+
+
+Started GET "/applicants/new" for 127.0.0.1 at 2021-03-30 20:36:12 +0530
+Processing by ApplicantsController#new as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "applicants" WHERE "applicants"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/applicants_controller.rb:74:in `check'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "applicants" WHERE "applicants"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/applicants_controller.rb:75:in `check'
+Redirected to http://127.0.0.1:3000/applicants
+Filter chain halted as :check rendered or redirected
+Completed 302 Found in 24ms (ActiveRecord: 5.7ms | Allocations: 2870)
+
+
+Started GET "/applicants" for 127.0.0.1 at 2021-03-30 20:36:12 +0530
+Processing by ApplicantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (2.0ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants"[0m
+  ↳ app/views/applicants/index.html.erb:10
+  Rendered applicants/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1392)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_header.html.erb:24
+  Rendered articles/_header.html.erb (Duration: 4.5ms | Allocations: 1286)
+  Rendered layouts/_alert.html.erb (Duration: 0.3ms | Allocations: 43)
+  Rendered articles/_footer.html.erb (Duration: 0.2ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 11372)
+Completed 200 OK in 33ms (Views: 28.5ms | ActiveRecord: 3.3ms | Allocations: 11886)
+
+
+Started GET "/mine" for 127.0.0.1 at 2021-03-30 20:36:15 +0530
+Processing by ApplicantsController#mine as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering applicants/mine.html.erb within layouts/application
+  [1m[36mApplicant Load (2.7ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants"[0m
+  ↳ app/views/applicants/mine.html.erb:4
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/applicants/mine.html.erb:5
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/applicants/mine.html.erb:5
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/applicants/mine.html.erb:5
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/applicants/mine.html.erb:5
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/applicants/mine.html.erb:5
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/applicants/mine.html.erb:5
+  Rendered applicants/mine.html.erb within layouts/application (Duration: 46.5ms | Allocations: 7570)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered articles/_header.html.erb (Duration: 0.5ms | Allocations: 349)
+  Rendered articles/_footer.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 65.2ms | Allocations: 16275)
+Completed 200 OK in 76ms (Views: 49.6ms | ActiveRecord: 18.1ms | Allocations: 18198)
+
+
+Started GET "/applicants/new" for 127.0.0.1 at 2021-03-30 20:36:16 +0530
+Processing by ApplicantsController#new as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "applicants" WHERE "applicants"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/applicants_controller.rb:74:in `check'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "applicants" WHERE "applicants"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/applicants_controller.rb:75:in `check'
+Redirected to http://127.0.0.1:3000/applicants
+Filter chain halted as :check rendered or redirected
+Completed 302 Found in 20ms (ActiveRecord: 5.0ms | Allocations: 2851)
+
+
+Started GET "/applicants" for 127.0.0.1 at 2021-03-30 20:36:16 +0530
+Processing by ApplicantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (1.4ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants"[0m
+  ↳ app/views/applicants/index.html.erb:10
+  Rendered applicants/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1392)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_header.html.erb:24
+  Rendered articles/_header.html.erb (Duration: 5.6ms | Allocations: 1286)
+  Rendered layouts/_alert.html.erb (Duration: 0.5ms | Allocations: 43)
+  Rendered articles/_footer.html.erb (Duration: 0.2ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 11238)
+Completed 200 OK in 28ms (Views: 23.8ms | ActiveRecord: 3.0ms | Allocations: 11751)
+
+
+Started GET "/mine" for 127.0.0.1 at 2021-03-30 20:36:18 +0530
+Processing by ApplicantsController#mine as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering applicants/mine.html.erb within layouts/application
+  [1m[36mApplicant Load (2.6ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants"[0m
+  ↳ app/views/applicants/mine.html.erb:4
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/applicants/mine.html.erb:5
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/applicants/mine.html.erb:5
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/applicants/mine.html.erb:5
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/applicants/mine.html.erb:5
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/applicants/mine.html.erb:5
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/applicants/mine.html.erb:5
+  Rendered applicants/mine.html.erb within layouts/application (Duration: 40.4ms | Allocations: 5962)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered articles/_header.html.erb (Duration: 0.8ms | Allocations: 349)
+  Rendered articles/_footer.html.erb (Duration: 0.2ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 57.4ms | Allocations: 14768)
+Completed 200 OK in 67ms (Views: 43.2ms | ActiveRecord: 17.2ms | Allocations: 16544)
+
+
+Started GET "/articles/about" for 127.0.0.1 at 2021-03-30 20:36:23 +0530
+Processing by ArticlesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/about.html.erb within layouts/application
+  Rendered articles/about.html.erb within layouts/application (Duration: 1.4ms | Allocations: 288)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_header.html.erb:24
+  Rendered articles/_header.html.erb (Duration: 8.7ms | Allocations: 1539)
+  Rendered articles/_footer.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 10357)
+Completed 200 OK in 31ms (Views: 26.2ms | ActiveRecord: 2.4ms | Allocations: 11702)
+
+
+Started GET "/applicants/new" for 127.0.0.1 at 2021-03-30 20:36:30 +0530
+Processing by ApplicantsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "applicants" WHERE "applicants"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/applicants_controller.rb:74:in `check'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "applicants" WHERE "applicants"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/applicants_controller.rb:75:in `check'
+Redirected to http://127.0.0.1:3000/applicants
+Filter chain halted as :check rendered or redirected
+Completed 302 Found in 18ms (ActiveRecord: 3.9ms | Allocations: 2849)
+
+
+Started GET "/applicants" for 127.0.0.1 at 2021-03-30 20:36:30 +0530
+Processing by ApplicantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (1.5ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants"[0m
+  ↳ app/views/applicants/index.html.erb:10
+  Rendered applicants/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1392)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_header.html.erb:24
+  Rendered articles/_header.html.erb (Duration: 8.2ms | Allocations: 1286)
+  Rendered layouts/_alert.html.erb (Duration: 0.2ms | Allocations: 43)
+  Rendered articles/_footer.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 11238)
+Completed 200 OK in 31ms (Views: 24.2ms | ActiveRecord: 4.3ms | Allocations: 11752)
+
+
+Started GET "/search?q=j" for 127.0.0.1 at 2021-03-30 20:37:00 +0530
+Processing by ApplicantsController#search as HTML
+  Parameters: {"q"=>"j"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering applicants/search.erb within layouts/application
+  [1m[36mApplicant Load (1.6ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE (name LIKE '%j%')[0m
+  ↳ app/views/applicants/search.erb:6
+  Rendered applicants/search.erb within layouts/application (Duration: 5.2ms | Allocations: 1333)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered articles/_header.html.erb (Duration: 0.6ms | Allocations: 359)
+  Rendered articles/_footer.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 10149)
+Completed 200 OK in 36ms (Views: 23.2ms | ActiveRecord: 3.7ms | Allocations: 12100)
+
+
