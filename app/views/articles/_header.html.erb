@@ -17,21 +17,23 @@
         <%= link_to "About Us", articles_about_path, class:'nav-link nav-text' %>
       </li>
         <li class="nav-item " id="applicants-nav-index">
-        <%= link_to "Applicants", applicants_path, class:'nav-link nav-text' %>
+        <%= link_to " All Applicants", applicants_path, class:'nav-link nav-text' %>
       </li>
-      <li class="nav-item " id="applicants-nav-new">
-        <%= link_to "Join", new_applicant_path, class:'nav-link nav-text' %>
-      </li>
-
+      
 
       <% if user_signed_in?%>
-
+      <li class="nav-item " id="applicants-nav-new">
+        <%= link_to "Edit profile", new_applicant_path, class:'nav-link nav-text' %>
+      </li>
+    
+          
+          
           <li class="nav-item " id="applicants-nav-index">
                 <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:'nav-link nav-text' %>
               </li>
 
           <li class="nav-item " id="applicants-nav-index">
-                <%= link_to "Edit profile", edit_user_registration_path, class:'nav-link nav-text' %>
+                <%= link_to "Change Password", edit_user_registration_path, class:'nav-link nav-text' %>
               </li>
                  <li class="nav-item " id="applicants-nav-index">
                  <%= link_to "My profile", mine_path, class:'nav-link nav-text' %>
@@ -39,6 +41,9 @@
             </li>
     
       <%else%>
+<li class="nav-item " id="applicants-nav-new">
+        <%= link_to "Add profile", new_applicant_path, class:'nav-link nav-text' %>
+      </li>
         
           <li class="nav-item " id="applicants-nav-index">
                 <%= link_to "Sign Up",new_user_registration_path, class:'nav-link nav-text' %>

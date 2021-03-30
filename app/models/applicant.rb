@@ -18,4 +18,12 @@ class Applicant < ApplicationRecord
         validates :cv_url, presence: true
         validates :skill1,presence:{message:' minimum one skill is compulsary'}
         validates :project1,presence:{message:' minimum one project is compulsary'}
+
+        before_save :downcase_fields
+
+        def downcase_fields
+           self.name.downcase!
+        end
+        
+
 end
