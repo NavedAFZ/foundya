@@ -1,39 +1,45 @@
+<style>
 
+</style>
 <br><br>
 <br>
 <div class="container">
-<div class="card">
+<div class="card" style="word-wrap:normal; width:80%;margin:auto">
   <div class="card-header">
-    <h2>Sign up</h2>
+    <h2 style="text-align:center">Sign up</h2>
   </div>
   <div class="card-body">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 <br>
-  <div class="field form-group row">
-    <%= f.label :email, class:"col-form-label col-md-3 " %><br />
-    <%= f.email_field :email, autocomplete: "email",class:"form-control col-md-8 " %>
-  </div>
 
-  <div class="field form-group row">
-    <%= f.label :password, class:"col-form-label col-md-3 " %>
+
+
+<div class="my" >
+  <div class="field form-group" >
+    <%=f.label :email %> 
+    <%= f.email_field :email,autocomplete:"email", class:"form-control col-md-12" %>
+  </div>
+  <br>
+
+  <div class="field form-group ">
+     <%= f.label :password , class:"form-label" %> 
     
-    <%= f.password_field :password, autocomplete: "new-password" ,class:"form-control col-md-8"%>
-    <% if @minimum_password_length %>
-    <p>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <em>(<%= @minimum_password_length %> characters minimum)</em></p>
-    <% end %><br />
-  </div>
-
-  <div class="field form-group row">
-    <%= f.label :password_confirmation, class:"col-form-label col-md-3 " %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"form-control col-md-8" %>
+    <%= f.password_field :password,autocomplete:"new password",class:"form-control col-md-12"%>
+   
   </div>
 <br>
-  <div class="actions">
-    <%= f.submit "Sign up", class:"btn btn-secondary" ,style:"margin-left:20px"%>
+  <div class="field ">
+    <%= f.label :password_confirmation , class:"form-label"%> 
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"form-control col-md-12"%>
   </div>
+
+  <br>
+ <div class="actions">
+    &nbsp;&nbsp;&nbsp;&nbsp;<%= f.submit "Sign up" ,class:"btn btn-dark"%>
+  </div>
+   </div>
+
 <% end %>
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary bg-light">
