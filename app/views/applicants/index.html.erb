@@ -1,21 +1,21 @@
 
-<div id="quote">
-         <h1 id="quote-h1">“You’ll never please everyone, but you only have to please a few people to get an offer.” – Harvey MacKay</h1>
-
-    </div>
 <!------>
 
     <!------>
 <div id='all-accounts'>
 <br>
 <br>
-<h1 id="all-accounts-header" class="text-center text-white bg-primary">All Users</h1>
+<%# <h1 id="all-accounts-header" class="text-center text-white bg-dark">All Users</h1> %>
     
 <% @applicants.each do |applicant| %>
 
-
-  <div class="row" id="appli">
-    <div class="col-12 col-md-11 bg-dark  text-light" id="appli-left">
+<br>
+<br>
+<br><br>
+<br>
+<br>
+  <div class="row" id="appli" >
+    <div class="col-12 col-md-11 bg-dark  text-light" id="appli-left"  >
       <h1><strong>Name :     </strong><%= applicant.name.capitalize %>  </h1>
       <h1><strong>Email :   </strong><%= applicant.email %> </h1>
 <hr>

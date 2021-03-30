@@ -78,8 +78,12 @@
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><%= @applicant.skill1.capitalize %></li>
+    <%if !@applicant.skill2.empty?%>
     <li class="list-group-item"><%= @applicant.skill2.capitalize %></li>
+    <%end%>
+    <%if !@applicant.skill3.empty?%>
     <li class="list-group-item"><%= @applicant.skill3.capitalize %></li>
+    <%end%>
   </ul>
 </div>
 <br>
@@ -104,40 +108,56 @@
     <p class="card-text"> <%= @applicant.project1.capitalize %></p>
    
   </div>
+  <%if !@applicant.project1_url.empty?%>
   <div class="card-footer text-muted">
      <strong>Project-1 URL:</strong>
   <%= @applicant.project1_url %>
   </div>
+  <%end%>
 </div>
 <br>
-<hr>
+
 <div class="card text-center">
+
+  <%if !@applicant.project2.empty?%>
   <div class="card-header bg-secondary text-light">
     Project-2
   </div>
+  
   <div class="card-body">
-    <p class="card-text"> <%= @applicant.project1.capitalize %></p>
+    <p class="card-text"> <%= @applicant.project2.capitalize %></p>
    
   </div>
+  <%end%>
+  <%if !@applicant.project2_url.empty?%>
+  
   <div class="card-footer text-muted">
      <strong>Project-2 URL:</strong>
   <%= @applicant.project2_url %>
   </div>
+  <%end%>
 </div>
 <br>
-<hr>
+
 <div class="card text-center">
+
+  <%if !@applicant.project3.empty?%>
   <div class="card-header bg-secondary text-light">
     Project-3
   </div>
+  
   <div class="card-body">
     <p class="card-text"> <%= @applicant.project3.capitalize %></p>
    
   </div>
+  <%end%>
+  <%if !@applicant.project3_url.empty?%>
+  
   <div class="card-footer text-muted">
      <strong>Project-3 URL:</strong>
-  <%= @applicant.project1_url %>
+  <%= @applicant.project3_url %>
   </div>
+  <%end%>
 </div>
 
   </div>
@@ -155,8 +175,14 @@
 <br>
     <br>
 <li class="list-group-item"><%= @applicant.experience1.capitalize %></li>
+<%if !@applicant.experience2.empty?%>
+  
     <li class="list-group-item"><%= @applicant.experience2.capitalize %></li>
+    <%end%>
+    <%if !@applicant.experience3.empty?%>
+  
     <li class="list-group-item"><%= @applicant.experience3.capitalize %></li>
+  <%end%>
   </ul>
 </div>
 <p>

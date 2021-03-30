@@ -1,8 +1,8 @@
 <!--Navigation Bar-->
 <!----style="position:fixed; top:0px; left:0px; width:100%; z-index:1"--->
-    <nav class="navbar navbar-expand-lg  navbar-light bg-primary " id="main_nav" style="position:fixed; top:0px; left:0px; width:100%; z-index:1" >
+    <nav class="navbar navbar-expand-lg  navbar-light bg-primary " id="main_nav" style="position:fixed; top:0px; left:0px; width:100%; z-index:1; font-size:25px;" >
           <%= fa_stacked_icon "camera inverse", base: "circle"%>
-            <%= link_to "Foundya!", applicants_path, class:'navbar-brand nav-text', style:'font-size:50px;'%>
+            <%= link_to "Foundya!", applicants_path, class:'navbar-brand nav-text', style:'font-size:40px;'%>
               
             
         
@@ -59,8 +59,19 @@
 
       
     </ul>
-    <form class="form-inline my-2 my-lg-0" action="/search">
-      <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    <form class="form-inline my-2 my-lg-0" action="/search" id="form1">
+      <input class="form-control mr-sm-2" type="search" name="q" id="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit"  value="submit" onclick="convert()">Search</button>
     </form>
   </div>    </nav>
+  <script>
+  function convert() 
+{
+    var str ;
+    str = document.getElementById("search");
+    str.value = (str.value.toLowerCase());
+    //get the form id and submit it
+    var form = document.getElementById("form1");
+    form.submit();
+}
+  </script>

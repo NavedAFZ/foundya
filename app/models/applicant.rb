@@ -17,6 +17,8 @@ class Applicant < ApplicationRecord
         too_short: "%{count} characters is the minimum allowed" },presence: true
         validates :cv_url, presence: true
         validates :skill1,presence:{message:' minimum one skill is compulsary'}
+         validates :experience1,presence:{message:' minimum one field is compulsary'}
+        # validates :skill1,presence:{message:' minimum one skill is compulsary'}
         validates :project1,presence:{message:' minimum one project is compulsary'}
 
         before_save :downcase_fields
